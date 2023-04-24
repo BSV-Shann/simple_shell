@@ -1,16 +1,15 @@
-[### C - Simple Shell](./C-Simple_shell)
+[#### C - Simple Shell](./C-Simple_shell)
 ---
 
-[Description](./Description)
+###Description.
 
-*  This is a simple implementation of a UNIX command line interpreter that executes the shell commands and scripts on a Unix-based operating system.
+* This is a simple implementation of a UNIX command line interpreter that executes the shell commands and scripts on a Unix-based operating system.
 
 * This shell has a similar functionality to sh (the standard UNIX shell), such as the ability to execute commands,redirect input and output, and use pipes to connect commands.It works by reading a command from the user,parsing it into its constituent parts,and executing it by calling the appropriate system function.
 
 ----
 
-###
-[## Compilation](./Compilation)
+## Compilation.
 
 * To compile the shell,navigate to the repository and use the following command:
 
