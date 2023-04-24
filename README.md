@@ -1,4 +1,5 @@
-#### C - Simple Shell.
+##### C - Simple Shell.
+
 ---
 
 ### Description.
@@ -9,7 +10,7 @@
 
 ----
 
-## Compilation.
+### Compilation.
 
 * To compile the shell,navigate to the repository and use the following command:
 
@@ -17,7 +18,7 @@
 
 ---
 
-[##Usage](./Usage)
+###Usage
 
 * The shell can be run in interactive mode by executing the program without any arguments:
 	`$ ./hsh
@@ -42,7 +43,7 @@
 
 ---
 
-[##Allowed functions](./Allowed_functions)
+### Allowed functions.
 
 	`Access (man 2 access)`
 	`chdir (man 2 chdir)`
@@ -73,8 +74,8 @@
 	`wait (man 2 wait)`
 	`waitpid (man 2 waitpid)`
 	`wait3 (man 2 wait3)`
-	`wait4 (man 2 wait4)`
-	`write (man 2 write)`
+`wait4`
+`write (man 2 write)`
 
 
 
