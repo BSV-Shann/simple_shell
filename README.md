@@ -1,8 +1,11 @@
 # C - Simple Shell.
 ---
 
-![Shell Image](path/to/shell.jpeg)
 
+![Shell image](shell.jpeg)
+
+
+<img src="shell.jpeg" alt="Shell image" width="500"/>
 
 
 ### Description.
