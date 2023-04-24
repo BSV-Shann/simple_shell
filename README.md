@@ -1,4 +1,4 @@
-* [### C - Simple Shell.](./C-Simple_shell)
+### C - Simple Shell.
 ---
 
 ### Description.
