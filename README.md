@@ -1,6 +1,10 @@
 # C - Simple Shell.
 ---
 
+![Shell Image](path/to/shell.jpeg)
+
+
+
 ### Description.
 
 * This is a simple implementation of a UNIX command line interpreter that executes the shell commands and scripts on a Unix-based operating system.
