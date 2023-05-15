@@ -1,8 +1,7 @@
 # C - Simple Shell.
 ---
 
-
-<img src="shell.jpeg" alt="Shell image" width="500"/>
+![Shell Image](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/235/shell.jpeg)
 
 
 ### Description.
