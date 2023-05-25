@@ -42,7 +42,8 @@ void parse_line(char *line, size_t size, int command_counter, char **av)
 
 /**
  * create_child_process - Creates a child process to execute another program.
- * @param_array: An array of string pointers containing the possible program name.
+ * @param_array: An array of string pointers
+ * containing the possible program name.
  * This array is NULL terminated.
  * @line: The contents of the read line.
  * @count: A counter keeping track of how many commands have been entered.

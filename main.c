@@ -14,13 +14,11 @@ int main(__attribute__((unused)) int ac, char **av)
 
 	command_counter = 0;
 	signal(SIGINT, SIG_IGN);
-	do
-	{
+	do {
 		command_counter++;
 		line = NULL;
 		size = 0;
 		parse_line(line, size, command_counter, av);
-	}
-	while (1);
+	} while (1);
 	return (0);
 }

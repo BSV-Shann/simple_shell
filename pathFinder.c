@@ -25,8 +25,7 @@ char *find_command_path(char *command)
 
 /**
  * find_path - Finds the index of an environmental variable.
- * @env_var:pointer to a string that rep. the environmental variable
- * @command:rep. the specific command for which the path needs to be found.
+ * @str:Environmental variable needed to be found.
  * Return: The index of the environmental variable if found, -1 otherwise.
  */
 int find_path(char *str)

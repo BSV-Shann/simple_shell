@@ -21,7 +21,7 @@ void cd_b(char *line)
 	}
 	if (param_array[1] == NULL)
 	{
-		index = find_path("HOME");
+		index = find_path("HOME", "command_name");
 		chdir((environ[index]) + 5);
 	}
 	else if (_strcmp(param_array[1], "-") == 0)
@@ -35,35 +35,8 @@ void cd_b(char *line)
 }
 
 /**
-*void cd_b(char *line)
-*{
-*	char *path = get_directory(line);
-*
-*	if (path == NULL)
-*	return;
-*
-*	if (path[0] == '\0')
-*	{
-*		char *home = getenv("HOME");
-*
-*		chdir(home);
-*	}
-*	else if (strcmp(path, "-") == 0)
-*	{
-*		char *prev_dir = getenv("OLDPWD");
-*
-*		chdir(prev_dir);
-*		printf("%s\n", prev_dir);
-*	}
-*	else
-*	{
-*		chdir(path);
-*	}
-*	free(path);
-*}
-*/
-/**
  * env_b - exit shell after freeing allocated resources
+ * @line: a character pointer
  */
 void env_b(__attribute__((unused))char *line)
 {
@@ -108,7 +81,8 @@ void (*check_built_ins(char *str))(char *line)
 		{NULL, NULL}
 	};
 
-	for (int i = 0; builtins[i].name != NULL; i++)
+	int i;
+	for (i = 0; builtins[i].name != NULL; i++)
 	{
 		if (strcmp(str, builtins[i].name) == 0)
 		{
