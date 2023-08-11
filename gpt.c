@@ -1,4 +1,9 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/stat.h>
 
 /**
  * find_command_path - Finds the full path of a program
@@ -8,36 +13,34 @@
 char *find_command_path(char *command)
 {
 	char *path_var = getenv("PATH");
-	{
-		if (path_var == NULL)
+
+	if (path_var == NULL)
 		return (NULL);
-	}
+
 	char *directory = find_path(path_var, command);
-	{
-		if (directory == NULL)
+
+	if (directory == NULL)
 		return (NULL);
-	}
+
 	char *full_path = build_path(directory, command);
-	{
-		free(directory);
-		return (full_path);
-	}
+
+	free(directory);
+	return (full_path);
 }
+
 /**
  * find_path - Finds the index of an environmental variable.
- * @str:Environmental variable needed to be found.
+ * @str: Environmental variable needed to be found.
  * Return: The index of the environmental variable if found, -1 otherwise.
  */
-
-int find_path(char *str)
+int find_path(char *str, char *command)
 {
-	int s;
-	int len;
-	int k;
+	int len = strlen(str);
 
-	len = str_len(str);
-	for (s = 0; environ[s] != NULL; s++)
+	for (int s = 0; environ[s] != NULL; s++)
 	{
+		int k;
+
 		for (k = 0; k < len; k++)
 		{
 			if (environ[s][k] != str[k])
@@ -49,24 +52,10 @@ int find_path(char *str)
 	return (-1);
 }
 
-/*
-*char *find_path(char *env_var, char *command)
-*{
-*	char *directory = strtok(env_var, ":");
-*
-*	while (directory != NULL)
-*	{
-*		if (access(directory, F_OK | X_OK) != -1)
-*		return (strdup(directory));
-*		directory = strtok(NULL, ":");
-*	}
-*	return (NULL);
-*}
-*/
 /**
  * tokenize_path - Separates a string of paths
  * into an array of path directories.
- * @env_var:pointer to a string.
+ * @env_var: pointer to a string.
  * Return: A NULL-terminated array of pointers to strings if successful,
  * otherwise returns NULL. Remember to free allocated memory as needed.
  */
@@ -117,14 +106,14 @@ char *search_directories(char **path_tokens, char *command)
 	char *cwd = getcwd(NULL, 0);
 
 	if (cwd == NULL)
-	return (NULL);
+		return (NULL);
 
 	char *directory = NULL;
 
 	for (int i = 0; path_tokens[i] != NULL; i++)
 	{
 		if (chdir(path_tokens[i]) == -1)
-		continue;
+			continue;
 
 		struct stat stat_buf;
 
@@ -156,7 +145,7 @@ char *build_path(char *directory, char *command)
 	char *full_path = malloc(full_path_len);
 
 	if (full_path == NULL)
-	return (NULL);
+		return (NULL);
 
 	snprintf(full_path, full_path_len, "%s/%s", directory, command);
 	return (full_path);
