@@ -1,6 +1,5 @@
 # C - Simple Shell.
----
-![AirBnB Logo](https://www.pngitem.com/pimgs/m/132-1322125_transparent-background-airbnb-logo-hd-png-download.png)  
+--- 
 
 ![Shell Image](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-low_level_programming/235/shell.jpeg)
 
